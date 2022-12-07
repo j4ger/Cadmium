@@ -1,0 +1,32 @@
+#!/bin/bash
+set -x
+set -e
+
+CADMIUMROOT="$(dirname $(dirname $(dirname $(realpath $0))))"
+DESTDIR="$1"
+
+. $CADMIUMROOT/config
+
+mkdir -p "$CADMIUMROOT/tmp"
+
+ALPINEBRANCH=$(curl --silent https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/${ARCH_ALARM}/latest-releases.yaml | awk '/branch:/ {print}' | head -1 | cut --delimiter=" " --fields=4)
+ALPINEVER=$(curl --silent https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/${ARCH_ALARM}/latest-releases.yaml | awk '/version:/ {print}' | head -1 | cut --delimiter=" " --fields=4)
+
+ROOTFS_TAR="https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/aarch64/alpine-minirootfs-${ALPINEVER}-${ARCH_ALARM}.tar.gz"
+if [ ! -f "$CADMIUMROOT/tmp/alpine-minirootfs-${ALPINEVER}-${ARCH_ALARM}.tar.gz" ]; then
+	rm $CADMIUMROOT/tmp/alpine-minirootfs-${ALPINEVER}-${ARCH_ALARM}.tar.gz || true
+	wget "$ROOTFS_TAR" -O $CADMIUMROOT/tmp/alpine-minirootfs-${ALPINEVER}-${ARCH_ALARM}.tar.gz
+fi
+tar xfp $CADMIUMROOT/tmp/alpine-minirootfs-${ALPINEVER}-${ARCH_ALARM}.tar.gz  -C $DESTDIR
+
+mount -o bind /dev $DESTDIR/dev
+mount -t proc none $DESTDIR/proc
+mount -o bind /sys $DESTDIR/sys
+
+rm $DESTDIR/etc/resolv.conf
+echo -e 'nameserver 1.1.1.1\nnameserver 1.0.0.1nnameserver 8.8.8.8\nnameserver 8.8.4.4' > $DESTDIR/etc/resolv.conf
+
+$chroot $DESTDIR $qemu /usr/bin/
+$chroot $DESTDIR $qemu systemctl start NetworkManager.service
+$chroot $DESTDIR $qemu systemctl enable NetworkManager.service
+

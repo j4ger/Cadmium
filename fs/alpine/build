@@ -12,7 +12,7 @@ mkdir -p "$CADMIUMROOT/tmp"
 ALPINEBRANCH=$(curl --silent https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/${ARCH_ALARM}/latest-releases.yaml | awk '/branch:/ {print}' | head -1 | cut --delimiter=" " --fields=4)
 ALPINEVER=$(curl --silent https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/${ARCH_ALARM}/latest-releases.yaml | awk '/version:/ {print}' | head -1 | cut --delimiter=" " --fields=4)
 
-ROOTFS_TAR="https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/${ARCH_ALARM}/alpine-minirootfs-${ALPINEVER}-${ARCH_ALARM}.tar.gz"
+ROOTFS_TAR="https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/${ARCH_ALARM}/alpine-standard-${ALPINEVER}-${ARCH_ALARM}.tar.gz"
 if [ ! -f "$CADMIUMROOT/tmp/alpine-minirootfs-${ALPINEVER}-${ARCH_ALARM}.tar.gz" ]; then
 	rm $CADMIUMROOT/tmp/alpine-minirootfs-${ALPINEVER}-${ARCH_ALARM}.tar.gz || true
 	wget "$ROOTFS_TAR" -O $CADMIUMROOT/tmp/alpine-minirootfs-${ALPINEVER}-${ARCH_ALARM}.tar.gz

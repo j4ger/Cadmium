@@ -34,7 +34,7 @@ mkdir -p $DESTDIR/etc/apk
 echo "https://dl-cdn.alpinelinux.org/alpine/${ALPINEBRANCH}/main" > $DESTDIR/etc/apk/repositories
 echo "https://dl-cdn.alpinelinux.org/alpine/${ALPINEBRANCH}/community/" > $DESTDIR/etc/apk/repositories
 
-$chroot $DESTDIR $qemu /sbin/apk update -U -a
+$chroot $DESTDIR $qemu /sbin/apk update -U
 $chroot $DESTDIR $qemu /sbin/apk add glib iptables libcurl libintl libndp libnm libpsl musl networkmanager-common nspr nss
 $chroot $DESTDIR $qemu /sbin/apk add networkmanager networkmanager-wifi
 $chroot $DESTDIR $qemu /sbin/rc-update add NetworkManager

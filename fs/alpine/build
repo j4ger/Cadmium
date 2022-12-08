@@ -31,8 +31,8 @@ mount -o bind /sys $DESTDIR/sys
 echo -e 'nameserver 1.1.1.1\nnameserver 1.0.0.1nnameserver 8.8.8.8\nnameserver 8.8.4.4' > $DESTDIR/etc/resolv.conf
 
 mkdir -p $DESTDIR/etc/apk
-echo "https://dl-cdn.alpinelinux.org/alpine/latest-stable/main" > $DESTDIR/etc/apk/repositories
-echo "https://dl-cdn.alpinelinux.org/alpine/latest-stable/community/" > $DESTDIR/etc/apk/repositories
+echo "https://dl-cdn.alpinelinux.org/alpine/${ALPINEBRANCH}/main" > $DESTDIR/etc/apk/repositories
+echo "https://dl-cdn.alpinelinux.org/alpine/${ALPINEBRANCH}/community/" > $DESTDIR/etc/apk/repositories
 
 $chroot $DESTDIR $qemu /sbin/apk update
 $chroot $DESTDIR $qemu /sbin/apk add glib iptables libcurl libintl libndp libnm libpsl musl networkmanager-common nspr nss

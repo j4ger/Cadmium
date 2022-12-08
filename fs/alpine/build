@@ -23,7 +23,7 @@ tar xfp $CADMIUMROOT/tmp/alpine-minirootfs-${ALPINEVER}-${ARCH_ALARM}.tar.gz  -C
 APKLINK=$(curl --silent https://dl-cdn.alpinelinux.org/alpine/edge/main/${ARCH_ALARM}/ | awk '/apk-tools-static/ {print}' | head -1 | cut --delimiter=">" --fields=2 | cut --delimiter="<" --fields=-1)
 curl -LO https://dl-cdn.alpinelinux.org/alpine/edge/main/${ARCH_ALARM}/${APKLINK}
 tar -xzf apk-tools-static-*.apk
-./sbin/apk.static -X https://dl-cdn.alpinelinux.org/alpine/edge/main -U --allow-untrusted -p $DESTDIR --initdb add alpine-base
+./sbin/apk.static -X https://dl-cdn.alpinelinux.org/alpine/edge/main -U --allow-untrusted -p $DESTDIR --initdb add alpine-FS_PKGS_CD_BASE
 
 mount -o bind /dev $DESTDIR/dev
 mount -t proc none $DESTDIR/proc

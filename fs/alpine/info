@@ -3,8 +3,8 @@
 # basic info
 FS_FANCYNAME="Alpine Linux"
 FS_HAS_OOBE="false"
-FS_INST_PKG="apk add"
-FS_UPDATE="apk update"
+FS_INST_PKG="/sbin/apk add"
+FS_UPDATE="/sbin/apk update"
 FS_USERGROUPS="wheel,video,audio,input"
 
 # packages

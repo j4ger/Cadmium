@@ -36,7 +36,7 @@ echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" > $DESTDIR/etc/apk/r
 echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" > $DESTDIR/etc/apk/repositories
 
 $chroot $DESTDIR $qemu /sbin/apk update
-$chroot $DESTDIR $qemu /sbin/apk add networkmanager-wifi
+$chroot $DESTDIR $qemu /sbin/apk add networkmanager
 $chroot $DESTDIR $qemu /sbin/rc-update add NetworkManager
 $chroot $DESTDIR $qemu /sbin/rc-update add devfs sysinit
 $chroot $DESTDIR $qemu /sbin/rc-update add dmesg sysinit
@@ -50,8 +50,3 @@ $chroot $DESTDIR $qemu /sbin/rc-update add syslog boot
 $chroot $DESTDIR $qemu /sbin/rc-update add mount-ro shutdown
 $chroot $DESTDIR $qemu /sbin/rc-update add killprocs shutdown
 $chroot $DESTDIR $qemu /sbin/rc-update add savecache shutdown
-$chroot $DESTDIR $qemu /sbin/rc-update add dbus
-$chroot $DESTDIR $qemu /sbin/rc-update add elogind
-$chroot $DESTDIR $qemu /sbin/rc-update add polkit
-$chroot $DESTDIR $qemu /sbin/rc-update add udev
-$chroot $DESTDIR $qemu /sbin/rc-update add sddm

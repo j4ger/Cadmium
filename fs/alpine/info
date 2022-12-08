@@ -16,7 +16,7 @@ FS_PKGS_CD_BOOTFW_DEPTHCHARGE="$FS_PKGS_CD_BOOTFW_UBOOT vboot-utils"
 
 # ui
 FS_SUPPORTED_UIS="kde gnome sway"
-FS_PKGS_CD_UI_GNOME="pipewire pipewire-media-session"
+#FS_PKGS_CD_UI_GNOME="pipewire pipewire-media-session"
 FS_PKGS_CD_UI_KDE="plasma elogind polkit-elogind dbus"
 #FS_PKGS_CD_UI_PHOSH="xfce4-terminal phosh phosh-tablet xwayland"
 FS_PKGS_CD_UI_SWAY="sway i3status dmenu xwayland grim slurp brightnessctl foot"

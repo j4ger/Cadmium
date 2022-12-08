@@ -25,7 +25,6 @@ mount -o bind /sys $DESTDIR/sys
 
 echo -e 'nameserver 1.1.1.1\nnameserver 1.0.0.1nnameserver 8.8.8.8\nnameserver 8.8.4.4' >> $DESTDIR/etc/resolv.conf
 
-$chroot $DESTDIR $qemu /usr/bin/
 $chroot $DESTDIR $qemu systemctl start NetworkManager.service
 $chroot $DESTDIR $qemu systemctl enable NetworkManager.service
 

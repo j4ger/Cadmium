@@ -33,6 +33,7 @@ echo -e 'nameserver 1.1.1.1\nnameserver 1.0.0.1nnameserver 8.8.8.8\nnameserver 8
 mkdir -p $DESTDIR/etc/apk
 echo "https://dl-cdn.alpinelinux.org/alpine/latest-stable/main" > $DESTDIR/etc/apk/repositories
 
+$chroot $DESTDIR $qemu /sbin/apk update
 $chroot $DESTDIR $qemu /sbin/apk add networkmanager networkmanager-wifi
 $chroot $DESTDIR $qemu /sbin/rc-update add NetworkManager
 $chroot $DESTDIR $qemu /sbin/rc-update add devfs sysinit

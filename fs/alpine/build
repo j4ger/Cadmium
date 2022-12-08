@@ -35,7 +35,7 @@ echo "https://dl-cdn.alpinelinux.org/alpine/latest-stable/main" > $DESTDIR/etc/a
 echo "https://dl-cdn.alpinelinux.org/alpine/latest-stable/community/" > $DESTDIR/etc/apk/repositories
 
 $chroot $DESTDIR $qemu /sbin/apk update
-$chroot $DESTDIR $qemu /sbin/apk add busybox-binsh dbus eudev-libs glib iptables libcurl libintl libndp libnm libpsl musl networkmanager-common nspr nss
+$chroot $DESTDIR $qemu /sbin/apk add glib iptables libcurl libintl libndp libnm libpsl musl networkmanager-common nspr nss
 $chroot $DESTDIR $qemu /sbin/apk add networkmanager networkmanager-wifi
 $chroot $DESTDIR $qemu /sbin/rc-update add NetworkManager
 $chroot $DESTDIR $qemu /sbin/rc-update add devfs sysinit

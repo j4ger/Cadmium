@@ -12,15 +12,15 @@ mkdir -p "$CADMIUMROOT/tmp"
 ALPINEBRANCH=$(curl --silent https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/${ARCH_ALARM}/latest-releases.yaml | awk '/branch:/ {print}' | head -1 | cut --delimiter=" " --fields=4)
 ALPINEVER=$(curl --silent https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/${ARCH_ALARM}/latest-releases.yaml | awk '/version:/ {print}' | head -1 | cut --delimiter=" " --fields=4)
 
-ROOTFS_TAR="https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/${ARCH_ALARM}/alpine-standard-${ALPINEVER}-${ARCH_ALARM}.tar.gz"
-if [ ! -f "$CADMIUMROOT/tmp/alpine-standard-${ALPINEVER}-${ARCH_ALARM}.tar.gz" ]; then
-	rm $CADMIUMROOT/tmp/alpine-standard-${ALPINEVER}-${ARCH_ALARM}.tar.gz || true
-	wget "$ROOTFS_TAR" -O $CADMIUMROOT/tmp/alpine-standard-${ALPINEVER}-${ARCH_ALARM}.tar.gz
+ROOTFS_TAR="https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/${ARCH_ALARM}/alpine-uboot-${ALPINEVER}-${ARCH_ALARM}.tar.gz"
+if [ ! -f "$CADMIUMROOT/tmp/alpine-uboot-${ALPINEVER}-${ARCH_ALARM}.tar.gz" ]; then
+	rm $CADMIUMROOT/tmp/alpine-uboot-${ALPINEVER}-${ARCH_ALARM}.tar.gz || true
+	wget "$ROOTFS_TAR" -O $CADMIUMROOT/tmp/alpine-uboot-${ALPINEVER}-${ARCH_ALARM}.tar.gz
 fi
-tar xfp $CADMIUMROOT/tmp/alpine-standard-${ALPINEVER}-${ARCH_ALARM}.tar.gz  -C $DESTDIR
+tar xfp $CADMIUMROOT/tmp/alpine-uboot-${ALPINEVER}-${ARCH_ALARM}.tar.gz  -C $DESTDIR
 
 APKLINK=$(curl --silent https://dl-cdn.alpinelinux.org/alpine/latest-stable/main/${ARCH_ALARM}/ | awk '/apk-tools-static/ {print}' | head -1 | cut --delimiter=">" --fields=2 | cut --delimiter="<" --fields=-1)
-curl -LO https://dl-cdn.alpinelinux.org/alpine/latest-stable/main/${ARCH_ALARM}/${APKLINK}
+curl -LO https://dl-cdn.alpinelinux.org/alpine/latest-uboot/main/${ARCH_ALARM}/${APKLINK}
 tar -xzf apk-tools-static-*.apk
 ./sbin/apk.static -X https://dl-cdn.alpinelinux.org/alpine/latest-stable/main -U --allow-untrusted -p $DESTDIR --initdb add alpine-base
 

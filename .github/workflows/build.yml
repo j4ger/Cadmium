@@ -2,12 +2,6 @@
 name: Build cadmium images
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-#  push:
-#    branches: [ master ]
-#  pull_request:
-#    branches: [ master ]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,7 +17,7 @@ jobs:
       - name: set up environment
         run: |
           cd $GITHUB_WORKSPACE
-          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted' | sudo tee -a /etc/apt/sources.list
+          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
           sudo apt update
           sudo apt build-dep linux
           sudo apt install gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
@@ -55,7 +49,7 @@ jobs:
       - name: set up environment
         run: |
           cd $GITHUB_WORKSPACE
-          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted' | sudo tee -a /etc/apt/sources.list
+          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
           sudo apt update
           sudo apt build-dep linux
           sudo apt install gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
@@ -87,7 +81,7 @@ jobs:
       - name: set up environment
         run: |
           cd $GITHUB_WORKSPACE
-          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted' | sudo tee -a /etc/apt/sources.list
+          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
           sudo apt update
           sudo apt build-dep linux
           sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
@@ -119,7 +113,7 @@ jobs:
       - name: set up environment
         run: |
           cd $GITHUB_WORKSPACE
-          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted' | sudo tee -a /etc/apt/sources.list
+          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
           sudo apt update
           sudo apt build-dep linux
           sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
@@ -150,7 +144,7 @@ jobs:
      - name: set up environment
        run: |
          cd $GITHUB_WORKSPACE
-         echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted' | sudo tee -a /etc/apt/sources.list
+         echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
          sudo apt update
          sudo apt build-dep linux
          sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
@@ -181,7 +175,7 @@ jobs:
      - name: set up environment
        run: |
          cd $GITHUB_WORKSPACE
-         echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted' | sudo tee -a /etc/apt/sources.list
+         echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
          sudo apt update
          sudo apt build-dep linux
          sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
@@ -212,7 +206,7 @@ jobs:
      - name: set up environment
        run: |
          cd $GITHUB_WORKSPACE
-         echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted' | sudo tee -a /etc/apt/sources.list
+         echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
          sudo apt update
          sudo apt build-dep linux
          sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
@@ -243,7 +237,7 @@ jobs:
      - name: set up environment
        run: |
          cd $GITHUB_WORKSPACE
-         echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted' | sudo tee -a /etc/apt/sources.list
+         echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
          sudo apt update
          sudo apt build-dep linux
          sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
@@ -274,7 +268,7 @@ jobs:
      - name: set up environment
        run: |
          cd $GITHUB_WORKSPACE
-         echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted' | sudo tee -a /etc/apt/sources.list
+         echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
          sudo apt update
          sudo apt build-dep linux
          sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
@@ -305,7 +299,7 @@ jobs:
      - name: set up environment
        run: |
          cd $GITHUB_WORKSPACE
-         echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted' | sudo tee -a /etc/apt/sources.list
+         echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
          sudo apt update
          sudo apt build-dep linux
          sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 

@@ -19,6 +19,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
           sudo apt update
+          sudo apt install -y libunwind-dev
           sudo apt build-dep linux
           sudo apt install gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
           
@@ -51,6 +52,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
           sudo apt update
+          sudo apt install -y libunwind-dev
           sudo apt build-dep linux
           sudo apt install gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
           
@@ -83,6 +85,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
           sudo apt update
+          sudo apt install -y libunwind-dev
           sudo apt build-dep linux
           sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
           
@@ -115,6 +118,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
           sudo apt update
+          sudo apt install -y libunwind-dev
           sudo apt build-dep linux
           sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
           
@@ -146,6 +150,7 @@ jobs:
          cd $GITHUB_WORKSPACE
          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
          sudo apt update
+         sudo apt install -y libunwind-dev
          sudo apt build-dep linux
          sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
          
@@ -177,6 +182,7 @@ jobs:
          cd $GITHUB_WORKSPACE
          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
          sudo apt update
+         sudo apt install -y libunwind-dev
          sudo apt build-dep linux
          sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
          
@@ -208,6 +214,7 @@ jobs:
          cd $GITHUB_WORKSPACE
          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
          sudo apt update
+         sudo apt install -y libunwind-dev
          sudo apt build-dep linux
          sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
          
@@ -239,6 +246,7 @@ jobs:
          cd $GITHUB_WORKSPACE
          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
          sudo apt update
+         sudo apt install -y libunwind-dev
          sudo apt build-dep linux
          sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
          
@@ -270,6 +278,7 @@ jobs:
          cd $GITHUB_WORKSPACE
          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
          sudo apt update
+         sudo apt install -y libunwind-dev
          sudo apt build-dep linux
          sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
          
@@ -301,6 +310,7 @@ jobs:
          cd $GITHUB_WORKSPACE
          echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
          sudo apt update
+         sudo apt install -y libunwind-dev
          sudo apt build-dep linux
          sudo apt install arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
          

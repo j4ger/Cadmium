@@ -10,12 +10,12 @@ else
 fi
 
 # RootFS type
-# One of: debian, void, void-musl, arch, alpine
-ROOTFS=alpine
+# One of: debian, void, void-musl, arch
+ROOTFS=void-musl
 
 # FS type
 # f2fs, ext4
-FILESYSTEM=f2fs
+FILESYSTEM=ext4
 
 # Debian and debian-ish distro suite (Not for arch)
 # sid, testing, stable
@@ -27,7 +27,7 @@ SUITE=sid
 KERNEL=kernelorg
 
 # How many threads should be used for building kernel
-THREADS="$(expr $(nproc) - 2)"
+THREADS="$(nproc)"
 
 # Build Cadmium inside tmpfs?
 IN_RAM=false

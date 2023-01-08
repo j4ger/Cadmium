@@ -31,3 +31,6 @@ THREADS="$(nproc)"
 
 # Build Cadmium inside tmpfs?
 IN_RAM=false
+
+## Build for Duet 5
+TARGET=homestar
